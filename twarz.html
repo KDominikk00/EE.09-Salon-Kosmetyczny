@@ -35,11 +35,11 @@
 
         <div class="right-2">
             <h2>Sprawdź cenę swojej wizyty</h2><br>
-            <label for="pilling"><input type="checkbox" id="pilling" name="pilling">Pilling </label><br>
-            <label for="maska"><input type="checkbox" id="maska" name="maska">Maska </label><br>
-            <label for="masazt"><input type="checkbox" id="masazt" name="masazt">Masaż twarzy </label><br>
-            <label for="regulb"><input type="checkbox" id="regulb" name="regulb"> Regulacja brwi </label><br>
-            <button>Sprawdź cenę</button><br>
+            <input type="checkbox" id="piling">Piling<br>
+            <input type="checkbox" id="maska">Maska<br>
+            <input type="checkbox" id="masazt">Masaż twarzy<br>
+            <input type="checkbox" id="regulb">Regulacja brwi<br>
+            <button onclick="oblicz()">Sprawdź cenę</button><br>
             <br>
             <span id="wynik"></span>
         </div>
@@ -54,7 +54,22 @@
     </footer>
 
     <script>
+        function oblicz() {
+            let cena = 0;
+            if(document.querySelector('#piling').checked) 
+            cena += 45;
         
+            if(document.querySelector('#maska').checked) 
+            cena += 30;
+        
+            if(document.querySelector('#masazt').checked) 
+            cena += 20;
+        
+            if(document.querySelector('#regulb').checked) 
+            cena += 5;
+         
+            document.querySelector('#wynik').innerHTML = `Cena zabiegów = ${cena}`
+    }
     </script>
 </body>
 
